@@ -47,13 +47,13 @@ More inhibitory mechanism induced by active transcription: Within actively trans
 K27M mutants may induce higher possibility of dissociation from the chromatin.
 Four figures will be generated: 
 
-(1) Cumulative occupancy of PRC2 molecules ![cumulative occupancy](ModificationPattern.PRC2.occupancy.png)
+(1) Cumulative occupancy of PRC2 molecules ![cumulative occupancy](ModificationPattern.PRC2.occupancy.pdf)
 
-(2) Spatio-temporal distribution of H3K27 methylation marks ![distribution](ModificationPattern.final.pattern.png)
+(2) Spatio-temporal distribution of H3K27 methylation marks ![distribution](ModificationPattern.final.pattern.pdf)
 
-(3) Cumulative amount of H3K27 methylation marks ![cumulative amount](ModificationPattern.cumulative.amount.png)
+(3) Cumulative amount of H3K27 methylation marks ![cumulative amount](ModificationPattern.cumulative.amount.pdf)
 
-(4) Velocity of deposition of H3K27 methylation marks ![deposition velocity](ModificationPattern.deposition.rate.png)
+(4) Velocity of deposition of H3K27 methylation marks ![deposition velocity](ModificationPattern.deposition.rate.pdf)
 
 
 Execute the following command for parameter details:
