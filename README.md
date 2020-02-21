@@ -5,15 +5,25 @@ We conceived a stochastic propagation model to simulate the dynamic process of d
 
 ## Bi-modal random walk of PRC2
 In this conceptual model, PRC2 complexes are first recruited at specific genomic loci (nucleation sites) where they have a high binding affinity, and then randomly diffuse along the chromatin. We simulate the diffusion by a random walk process:
+
 (1) We create a one-dimensional vector with continuous integers to represent coordinates of histones winding around the DNA sequence, and assign two narrow regions to harbor nucleation sites.
+
 (2) We initiate eight PRC2 complexes at each of the two nucleation sites and record their coordinates, at time (t) = 0.
+
 (3) For a PRC2 complex, we draw a random value: 
-  (3.1) with 95% probability, from a binomial distribution Binom(8, 0.5) to represent short-range diffusion due to spontaneous thermal motion; or 
-  (3.2) with 5% probability, from a gamma distribution Gamma(0.5, 0.001) to represent possible long-range traveling of the complex after dissociating from the chromatin or across interacting genomic regions.
+  
+  *(3.1) with 95% probability, from a binomial distribution Binom(8, 0.5) to represent short-range diffusion due to spontaneous thermal motion; or 
+  
+  *(3.2) with 5% probability, from a gamma distribution Gamma(0.5, 0.001) to represent possible long-range traveling of the complex after dissociating from the chromatin or across interacting genomic regions.
+
 (4) We approximate this random value with the nearest (non-negative) integer and regard it as the distance the PRC2 complex travels within a time unit.
+
 (5) We change the coordinate of the PRC2 complex at t = 1 if the travelling distance is non-zero, upstream or downstream with equal probability, based on the distance obtained in (4).
+
 (6) For each PRC2 complex, we repeat (3) – (5) independently, so that we obtain the coordinates for all complexes at t = 1.
+
 (7) We repeat (3) – (6) for a given period of time.
+
 (8) We repeat (2) – (7) for a population of 20? cells, each cell independently yet having identical representation of the simulated chromatin and nucleation sites; We record the cumulative distribution of methylation marks until the relative abundance of different methylation marks reaches an equilibrium.
 When a PRC2 complex travels beyond the border of our simulated region, we introduce a new complex initiating at a nucleation site to replace the one we lose track of, and independently simulate its trajectory together with other complexes.
 
