@@ -11,10 +11,8 @@ In this conceptual model, PRC2 complexes are first recruited at specific genomic
 (2) We initiate eight PRC2 complexes at each of the two nucleation sites and record their coordinates, at time (t) = 0.
 
 (3) For a PRC2 complex, we draw a random value: 
-  
-  *(3.1) with 95% probability, from a binomial distribution Binom(8, 0.5) to represent short-range diffusion due to spontaneous thermal motion; or 
-  
-  *(3.2) with 5% probability, from a gamma distribution Gamma(0.5, 0.001) to represent possible long-range traveling of the complex after dissociating from the chromatin or across interacting genomic regions.
+(3.1) with 95% probability, from a binomial distribution Binom(8, 0.5) to represent short-range diffusion due to spontaneous thermal motion; or
+(3.2) with 5% probability, from a gamma distribution Gamma(0.5, 0.001) to represent possible long-range traveling of the complex after dissociating from the chromatin or across interacting genomic regions.
 
 (4) We approximate this random value with the nearest (non-negative) integer and regard it as the distance the PRC2 complex travels within a time unit.
 
