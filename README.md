@@ -3,7 +3,7 @@ Program for stochastic simulation of histone modification dynamics
 
 Correspondence: Dr. Jacek Majewski (jacek.majewski@mcgill.ca)
 
-To report coding issues: Mr. Tianyuan Lu (tianyuan.lu@mail.mcgill.ca)
+Report coding issues to: Mr. Tianyuan Lu (tianyuan.lu@mail.mcgill.ca)
 
 We conceived a stochastic propagation model to simulate the dynamic process of deposition of H3K27 methylation marks by PRC2. In this study, we simulated a genomic region (length = 5,000 nucleosomes, corresponding to approximately 1 Mb of DNA) containing two PRC2 binding loci (at 2,000 and 3,000), in 20 cells. We introduced two actively transcribed regions marked with K36me3 and one intergenic region merged with K36me2.
 
