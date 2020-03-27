@@ -5,7 +5,7 @@ Correspondence: Dr. Jacek Majewski (jacek.majewski@mcgill.ca)
 
 Report coding issues to: Mr. Tianyuan Lu (tianyuan.lu@mail.mcgill.ca)
 
-We conceived a stochastic propagation model to simulate the dynamic process of deposition of H3K27 methylation marks by PRC2. In this study, we simulated a genomic region (length = 5,000 nucleosomes, corresponding to approximately 1 Mb of DNA) containing two PRC2 binding loci (at 2,000 and 3,000), in 100 cells. We introduced two actively transcribed regions marked with K36me3 and one intergenic region merged with K36me2.
+We conceived a stochastic propagation model to simulate the dynamic process of deposition of H3K27 methylation marks by PRC2. In this study, we simulated a genomic region (length = 5,000 nucleosomes, corresponding to approximately 1 Mb of DNA) containing two PRC2 binding loci (at 2,000 and 3,000), in 20 cells. We introduced two actively transcribed regions marked with K36me3 and one intergenic region merged with K36me2.
 
 ## Bi-modal random walk of PRC2
 In this conceptual model, PRC2 complexes are first recruited at specific genomic loci (nucleation sites) where they have a high binding affinity, and then randomly diffuse along the chromatin. We simulate the diffusion by a random walk process:
@@ -26,7 +26,7 @@ In this conceptual model, PRC2 complexes are first recruited at specific genomic
 
 (7) We repeat (3) – (6) for a given period of time.
 
-(8) We repeat (2) – (7) for a population of 100 cells, each cell independently yet having identical representation of the simulated chromatin and nucleation sites; We record the cumulative distribution of methylation marks until the relative abundance of different methylation marks reaches an equilibrium.
+(8) We repeat (2) – (7) for a population of 20 cells, each cell independently yet having identical representation of the simulated chromatin and nucleation sites; We record the cumulative distribution of methylation marks until the relative abundance of different methylation marks reaches an equilibrium.
 When a PRC2 complex travels beyond the border of our simulated region, we introduce a new complex initiating at a nucleation site to replace the one we lose track of, and independently simulate its trajectory together with other complexes.
 
 ## Catalytic features of PRC2
@@ -222,6 +222,6 @@ optional arguments:
 
 Example script (equivalent to using default settings):
 
-    Rscript histone_modification_dynamics.R -a 1.5 -b 0.001 --regionLength 5000 --PRC2Peak1 1490 1510 --PRC2Peak2 3190 3210 --pme1 0.95 --pme2 0.25 --pme2adj 0.5 --pme3 0.01 --pme3adj 0.15 --enhancedTime 2 --Npop 100 --Nenzyme1 8 --Nenzyme2 8 --Nstep 5000 --period 1000 --TSSTES 2100 2300 3500 3750 --K36Me3 2100 2300 3500 3750 --K36Me2 2301 2900 --K36me3harm01 5 --K36me3harm12 7.5 --K36me3harm23 15 --K36me2harm01 2 --K36me2harm12 3 --K36me2harm23 5 -E FALSE --periodExpression 100 --mutRate 0.05 --K27Mharm01 2 --K27Mharm12 2 --K27Mharm23 2 --K27MharmPermanent TRUE --sequestrationTime 5 --normalBackRate 0 --K27MBackRate 0 --targetedRegion 1001 4000 --shortRangeProb 0.95 --shortRangeLimit 8 --shortRangeCentrality 0.5 --K27MintroduceTime 0 --equiPeriod 1 --output ModificationPattern
+    Rscript histone_modification_dynamics.R -a 1.5 -b 0.001 --regionLength 5000 --PRC2Peak1 1490 1510 --PRC2Peak2 3190 3210 --pme1 0.95 --pme2 0.25 --pme2adj 0.5 --pme3 0.01 --pme3adj 0.15 --enhancedTime 2 --Npop 20 --Nenzyme1 8 --Nenzyme2 8 --Nstep 5000 --period 1000 --TSSTES 2100 2300 3500 3750 --K36Me3 2100 2300 3500 3750 --K36Me2 2301 2900 --K36me3harm01 5 --K36me3harm12 7.5 --K36me3harm23 15 --K36me2harm01 2 --K36me2harm12 3 --K36me2harm23 5 -E FALSE --periodExpression 100 --mutRate 0.05 --K27Mharm01 2 --K27Mharm12 2 --K27Mharm23 2 --K27MharmPermanent TRUE --sequestrationTime 5 --normalBackRate 0 --K27MBackRate 0 --targetedRegion 1001 4000 --shortRangeProb 0.95 --shortRangeLimit 8 --shortRangeCentrality 0.5 --K27MintroduceTime 0 --equiPeriod 1 --output ModificationPattern
 
 *Tips for producing videos to showcase the dynamic process: Edit R script lines 343-344 and execute command from RStudio to generate distribution pattern figures for a series of time points; Store figures in a folder and copy MATLAB script "compileGIF.m" provided into that folder; Edit MATLAB script line 2 to match names of figure files and line 5 to specify output file name; Execute from MATLAB*
