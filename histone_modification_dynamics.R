@@ -15,7 +15,7 @@ parser$add_argument("--PRC2Peak1", type = "integer", default = c(1490,1510), nar
                     help = "start/end coordinates indicating where a PRC2 binding peak exists")
 parser$add_argument("--PRC2Peak2", type = "integer", default = c(3190,3210), nargs = '+',
                     help = "start/end coordinates where a PRC2 binding peak exists")
-parser$add_argument("--pme1", type = "double", default = 0.95, 
+parser$add_argument("--pme1", type = "double", default = 0.9, 
                     help = "normal conversion rate from me0 to me1")
 parser$add_argument("--pme2", type = "double", default = 0.25, 
                     help = "normal conversion rate from me1 to me2")
@@ -27,7 +27,7 @@ parser$add_argument("--pme3adj", type = "double", default = 0.15,
                     help = "increased conversion rate from me2 to me3 by allosteric activation")
 parser$add_argument("--enhancedTime", type = "integer", default = 2, 
                     help = "time for allosterically activated PRC2 to maintain its enhanced catalytic ability; set to 0 to remove this effect")
-parser$add_argument("-N", "--Npop", type = "integer", default = 20, 
+parser$add_argument("-N", "--Npop", type = "integer", default = 100, 
                     help = "number of cells")
 parser$add_argument("--Nenzyme1", type = "integer", default = 8, 
                     help = "number of PRC2 molecules initially bound at peak1")
@@ -63,9 +63,9 @@ parser$add_argument("--mutRate", type = "double", default = 0.05,
                     help = "rate of K27M mutants; set to 0 to simulate a K27M-free scenario")
 parser$add_argument("--K27Mharm01", type = "double", default = 2, 
                     help = "K27M decreases me0 to me1 conversion rate by K27Mharm01-fold")
-parser$add_argument("--K27Mharm12", type = "double", default = 2, 
+parser$add_argument("--K27Mharm12", type = "double", default = 5, 
                     help = "K27M decreases me1 to me2 conversion rate by K27Mharm12-fold")
-parser$add_argument("--K27Mharm23", type = "double", default = 2, 
+parser$add_argument("--K27Mharm23", type = "double", default = 10, 
                     help = "K27M decreases me2 to me3 conversion rate by K27Mharm23-fold")
 parser$add_argument("--K27MharmPermanent", type = "logical", default = TRUE, 
                     help = "whether K27M permanently damages the catalytic capacity of PRC2 and prevents future allosteric activation")
