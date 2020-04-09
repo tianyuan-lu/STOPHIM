@@ -1,5 +1,5 @@
-# histone_modification_dynamics
-Program for stochastic simulation of histone modification dynamics
+# STOPHIM
+Program for simulating **STO**chastic **P**rocess of **HI**stone **M**odification
 
 Correspondence: Dr. Jacek Majewski (jacek.majewski@mcgill.ca)
 
