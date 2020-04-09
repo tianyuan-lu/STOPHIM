@@ -55,45 +55,33 @@ Four figures will be generated:
 
 Execute the following command for parameter details:
     
-    Rscript histone_modification_dynamics.R -h
+    Rscript STOPHIM.R -h
 
 ```ruby
-usage: ./histone_modification_dynamics.R [-h] [-a ALPHA] [-b BETA]
-                                         [--regionLength REGIONLENGTH]
-                                         [--PRC2Peak1 PRC2PEAK1 [PRC2PEAK1 ...]]
-                                         [--PRC2Peak2 PRC2PEAK2 [PRC2PEAK2 ...]]
-                                         [--pme1 PME1] [--pme2 PME2]
-                                         [--pme2adj PME2ADJ] [--pme3 PME3]
-                                         [--pme3adj PME3ADJ]
-                                         [--enhancedTime ENHANCEDTIME]
-                                         [-N NPOP] [--Nenzyme1 NENZYME1]
-                                         [--Nenzyme2 NENZYME2] [--Nstep NSTEP]
-                                         [--period PERIOD]
-                                         [--TSSTES TSSTES [TSSTES ...]]
-                                         [--K36Me3 K36ME3 [K36ME3 ...]]
-                                         [--K36Me2 K36ME2 [K36ME2 ...]]
-                                         [--K36me3harm01 K36ME3HARM01]
-                                         [--K36me3harm12 K36ME3HARM12]
-                                         [--K36me3harm23 K36ME3HARM23]
-                                         [--K36me2harm01 K36ME2HARM01]
-                                         [--K36me2harm12 K36ME2HARM12]
-                                         [--K36me2harm23 K36ME2HARM23]
-                                         [-E EXPRESSION]
-                                         [--periodExpression PERIODEXPRESSION]
-                                         [--mutRate MUTRATE]
-                                         [--K27Mharm01 K27MHARM01]
-                                         [--K27Mharm12 K27MHARM12]
-                                         [--K27Mharm23 K27MHARM23]
-                                         [--K27MharmPermanent K27MHARMPERMANENT]
-                                         [--sequestrationTime SEQUESTRATIONTIME]
-                                         [--normalBackRate NORMALBACKRATE]
-                                         [--K27MBackRate K27MBACKRATE]
-                                         [--targetedRegion TARGETEDREGION [TARGETEDREGION ...]]
-                                         [--shortRangeProb SHORTRANGEPROB]
-                                         [--shortRangeLimit SHORTRANGELIMIT]
-                                         [--shortRangeCentrality SHORTRANGECENTRALITY]
-                                         [--K27MintroduceTime K27MINTRODUCETIME]
-                                         [--equiPeriod EQUIPERIOD] [-o OUTPUT]
+usage: STOPHIM.R [-h] [-a ALPHA] [-b BETA] [--regionLength REGIONLENGTH]
+                 [--PRC2Peak1 PRC2PEAK1 [PRC2PEAK1 ...]]
+                 [--PRC2Peak2 PRC2PEAK2 [PRC2PEAK2 ...]] [--pme1 PME1]
+                 [--pme2 PME2] [--pme2adj PME2ADJ] [--pme3 PME3]
+                 [--pme3adj PME3ADJ] [--enhancedTime ENHANCEDTIME] [-N NPOP]
+                 [--Nenzyme1 NENZYME1] [--Nenzyme2 NENZYME2] [--Nstep NSTEP]
+                 [--period PERIOD] [--TSSTES TSSTES [TSSTES ...]]
+                 [--K36Me3 K36ME3 [K36ME3 ...]] [--K36Me2 K36ME2 [K36ME2 ...]]
+                 [--K36me3harm01 K36ME3HARM01] [--K36me3harm12 K36ME3HARM12]
+                 [--K36me3harm23 K36ME3HARM23] [--K36me2harm01 K36ME2HARM01]
+                 [--K36me2harm12 K36ME2HARM12] [--K36me2harm23 K36ME2HARM23]
+                 [-E EXPRESSION] [--periodExpression PERIODEXPRESSION]
+                 [--mutRate MUTRATE] [--K27Mharm01 K27MHARM01]
+                 [--K27Mharm12 K27MHARM12] [--K27Mharm23 K27MHARM23]
+                 [--K27MharmPermanent K27MHARMPERMANENT]
+                 [--sequestrationTime SEQUESTRATIONTIME]
+                 [--normalBackRate NORMALBACKRATE]
+                 [--K27MBackRate K27MBACKRATE]
+                 [--targetedRegion TARGETEDREGION [TARGETEDREGION ...]]
+                 [--shortRangeProb SHORTRANGEPROB]
+                 [--shortRangeLimit SHORTRANGELIMIT]
+                 [--shortRangeCentrality SHORTRANGECENTRALITY]
+                 [--K27MintroduceTime K27MINTRODUCETIME]
+                 [--equiPeriod EQUIPERIOD] [-o OUTPUT]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -210,11 +198,10 @@ optional arguments:
                         100 time points
   -o OUTPUT, --output OUTPUT
                         prefix for output file names
-
 ```
 
 Example script (equivalent to using default settings):
 
-    Rscript histone_modification_dynamics.R -a 0.5 -b 0.001 --regionLength 5000 --PRC2Peak1 1490 1510 --PRC2Peak2 3190 3210 --pme1 0.9 --pme2 0.25 --pme2adj 0.5 --pme3 0.01 --pme3adj 0.15 --enhancedTime 2 --Npop 100 --Nenzyme1 8 --Nenzyme2 8 --Nstep 5000 --period 1000 --TSSTES 2100 2300 3500 3750 --K36Me3 2100 2300 3500 3750 --K36Me2 2301 2900 --K36me3harm01 5 --K36me3harm12 7.5 --K36me3harm23 15 --K36me2harm01 2 --K36me2harm12 3 --K36me2harm23 5 -E FALSE --periodExpression 100 --mutRate 0.05 --K27Mharm01 2 --K27Mharm12 5 --K27Mharm23 10 --K27MharmPermanent TRUE --sequestrationTime 5 --normalBackRate 0 --K27MBackRate 0 --targetedRegion 1001 4000 --shortRangeProb 0.95 --shortRangeLimit 8 --shortRangeCentrality 0.5 --K27MintroduceTime 0 --equiPeriod 1 --output ModificationPattern
+    Rscript STOPHIM.R -a 0.5 -b 0.001 --regionLength 5000 --PRC2Peak1 1490 1510 --PRC2Peak2 3190 3210 --pme1 0.9 --pme2 0.25 --pme2adj 0.5 --pme3 0.01 --pme3adj 0.15 --enhancedTime 2 --Npop 100 --Nenzyme1 8 --Nenzyme2 8 --Nstep 5000 --period 1000 --TSSTES 2100 2300 3500 3750 --K36Me3 2100 2300 3500 3750 --K36Me2 2301 2900 --K36me3harm01 5 --K36me3harm12 7.5 --K36me3harm23 15 --K36me2harm01 2 --K36me2harm12 3 --K36me2harm23 5 -E FALSE --periodExpression 100 --mutRate 0.05 --K27Mharm01 2 --K27Mharm12 5 --K27Mharm23 10 --K27MharmPermanent TRUE --sequestrationTime 5 --normalBackRate 0 --K27MBackRate 0 --targetedRegion 1001 4000 --shortRangeProb 0.95 --shortRangeLimit 8 --shortRangeCentrality 0.5 --K27MintroduceTime 0 --equiPeriod 1 --output ModificationPattern
 
 *Tips for producing videos to showcase the dynamic process: Edit R script lines 343-344 and execute command from RStudio to generate distribution pattern figures for a series of time points; Store figures in a folder and copy MATLAB script "compileGIF.m" provided into that folder; Edit MATLAB script line 2 to match names of figure files and line 5 to specify output file name; Execute from MATLAB*
