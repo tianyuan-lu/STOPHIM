@@ -7,6 +7,8 @@ Report coding issues to: Mr. Tianyuan Lu (tianyuan.lu@mail.mcgill.ca)
 
 We conceived a stochastic propagation model to simulate the dynamic process of deposition of H3K27 methylation marks by PRC2. In this study, we simulated a genomic region (length = 5,000 nucleosomes, corresponding to approximately 1 Mb of DNA) containing two PRC2 binding regions (1,490-1,510 and 3,190-3,210 nucleosomes), in 100 cells. We introduced two actively transcribed genic regions marked with H3K36me3 (2,100-2,300 and 3,500-3,750 nucleosomes) and one in intergenic region marked with H3K36me2 (2,301-2,900 nucleosomes).
 
+Check out our publication in Cell Reports! https://www.sciencedirect.com/science/article/pii/S2211124720313796
+
 ## Bi-modal random walk of PRC2
 In this conceptual model, PRC2 complexes were first recruited at specific genomic loci (nucleation sites) where they had a high binding affinity, and then randomly diffused along the chromatin. We simulated the diffusion by a random walk process:
 (1) We created a one-dimensional vector with continuous integers to represent coordinates of histones wrapped around by DNA sequence; We next assigned two narrow regions to harbor nucleation sites.
